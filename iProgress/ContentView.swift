@@ -12,11 +12,11 @@ struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.colorScheme) var colorScheme
     
-    @Query private var progresses: [Progress]
+    @Query private var progresses: [ProgressM]
     
     @State private var showingCreate = false
     
-    @State private var progressUpdate: Progress?
+    @State private var progressUpdate: ProgressM?
     
     var body: some View {
         NavigationStack {
@@ -34,7 +34,7 @@ struct ContentView: View {
                                         .font(.caption)
                                 }
                             }
-                            StyledGauge2(maxValueDate: progress.dateFrom)
+                            StyledGauge2(minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
                         }
                     }
                     .onTapGesture {
@@ -80,5 +80,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Progress.self)
+        .modelContainer(for: ProgressM.self)
 }

@@ -13,7 +13,7 @@ struct iProgressApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: Progress.self)
+                .modelContainer(for: ProgressM.self)
         }
     }
 }

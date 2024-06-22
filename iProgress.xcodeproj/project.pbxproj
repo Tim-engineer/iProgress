@@ -12,8 +12,8 @@
 		D1B0C0BD2C25949A0042F9E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B0C0BC2C25949A0042F9E5 /* ContentView.swift */; };
 		D1B0C0BF2C25949B0042F9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B0C0BE2C25949B0042F9E5 /* Assets.xcassets */; };
 		D1B0C0C22C25949B0042F9E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B0C0C12C25949B0042F9E5 /* Preview Assets.xcassets */; };
-		D1B0C0C92C2595150042F9E5 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B0C0C82C2595150042F9E5 /* Progress.swift */; };
 		D1B0C0CB2C2595E80042F9E5 /* CreateProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B0C0CA2C2595E80042F9E5 /* CreateProgress.swift */; };
+		D1B46F332C26E8F70078F267 /* ProgressM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B46F322C26E8F70078F267 /* ProgressM.swift */; };
 		D1DA1D9A2C26D11000AFC914 /* GaugeNotMine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA1D992C26D11000AFC914 /* GaugeNotMine.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +24,8 @@
 		D1B0C0BC2C25949A0042F9E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1B0C0BE2C25949B0042F9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1B0C0C12C25949B0042F9E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D1B0C0C82C2595150042F9E5 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		D1B0C0CA2C2595E80042F9E5 /* CreateProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProgress.swift; sourceTree = "<group>"; };
+		D1B46F322C26E8F70078F267 /* ProgressM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressM.swift; sourceTree = "<group>"; };
 		D1DA1D992C26D11000AFC914 /* GaugeNotMine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeNotMine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +64,7 @@
 				D1DA1D992C26D11000AFC914 /* GaugeNotMine.swift */,
 				D1B0C0CA2C2595E80042F9E5 /* CreateProgress.swift */,
 				D13799AF2C25A25000F84B89 /* UpdateProgress.swift */,
-				D1B0C0C82C2595150042F9E5 /* Progress.swift */,
+				D1B46F322C26E8F70078F267 /* ProgressM.swift */,
 				D1B0C0BE2C25949B0042F9E5 /* Assets.xcassets */,
 				D1B0C0C02C25949B0042F9E5 /* Preview Content */,
 			);
@@ -150,11 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B0C0CB2C2595E80042F9E5 /* CreateProgress.swift in Sources */,
-				D1B0C0C92C2595150042F9E5 /* Progress.swift in Sources */,
 				D1B0C0BD2C25949A0042F9E5 /* ContentView.swift in Sources */,
 				D13799B02C25A25000F84B89 /* UpdateProgress.swift in Sources */,
 				D1DA1D9A2C26D11000AFC914 /* GaugeNotMine.swift in Sources */,
 				D1B0C0BB2C25949A0042F9E5 /* iProgressApp.swift in Sources */,
+				D1B46F332C26E8F70078F267 /* ProgressM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

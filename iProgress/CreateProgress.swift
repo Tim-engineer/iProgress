@@ -11,15 +11,24 @@ struct CreateProgress: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     
-    @State private var progress = Progress()
+    @State private var progress = ProgressM()
+    
+    var disabled: Bool {
+        progress.name.isEmpty
+    }
     
     var body: some View {
         Form {
-            Section {
-                TextField("Enter the Progress you want to track", text: $progress.name)
-                    .autocorrectionDisabled()
-                    .padding(.vertical)
+            Group {
+                Section {
+                    TextField("Name of the Progress", text: $progress.name)
+                }
+                Section {
+                    TextField("Description of the Progress", text: $progress.details)
+                }
             }
+            .autocorrectionDisabled()
+            .padding(.vertical)
             Group {
                 Section("From") {
                     DatePicker("Select the time you need the Progress to be finished", selection: $progress.dateFrom, in: Date.now...)
@@ -41,6 +50,7 @@ struct CreateProgress: View {
                     dismiss()
                 }
                 .tint(.green)
+//                .disabled(disabled)
             }
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {

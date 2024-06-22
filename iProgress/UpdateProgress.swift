@@ -11,15 +11,20 @@ struct UpdateProgress: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     
-    @Bindable var progress: Progress
+    @Bindable var progress: ProgressM
     
     var body: some View {
         Form {
-            Section {
-                TextField("Enter the Progress you want to track", text: $progress.name)
-                    .autocorrectionDisabled()
-                    .padding(.vertical)
+            Group {
+                Section {
+                    TextField("Enter the Progress you want to track", text: $progress.name)
+                }
+                Section {
+                    TextField("Description of the Progress", text: $progress.details)
+                }
             }
+            .autocorrectionDisabled()
+            .padding(.vertical)
             Group {
                 Section("From") {
                     DatePicker("Select the time you need the Progress to be finished", selection: $progress.dateFrom, in: Date.now...)

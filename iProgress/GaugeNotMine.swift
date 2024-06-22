@@ -37,8 +37,8 @@ struct StyledGauge: View {
 }
 
 struct StyledGauge2: View {
-    @State private var currentDate = Date()
-    @State private var minValueDate = Date().addingTimeInterval(-30 * 24 * 60 * 60) // 30 days ago
+    @State private var currentDate = Date.now
+    let minValueDate: Date
     let maxValueDate: Date
     
     let gradient = Gradient(colors: [.red, .orange, .yellow, .green])
@@ -90,5 +90,5 @@ struct StyledGauge2: View {
 }
 
 #Preview {
-    StyledGauge2(maxValueDate: Date.now)
+    StyledGauge2(minValueDate: Date.now, maxValueDate: Date.now)
 }
