@@ -30,17 +30,17 @@ struct ContentView: View {
                                 VStack(alignment: .leading) {
                                     Text(progress.name)
                                         .font(.headline)
-                                    Text(progress.dateFrom.formatted(date: .complete, time: .omitted))
+                                    Text(progress.details)
                                         .font(.caption)
                                 }
                             }
-                            StyledGauge2(minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
+                            StyledGauge(currentDate: Date.now, minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
                         }
                     }
                     .onTapGesture {
                         progressUpdate = progress
                     }
-//                    .listRowBackground(randomColor().opacity(0.8))
+                    .listRowBackground(randomColor().opacity(0.1))
                 }
                 .onDelete(perform: deleteProgress)
             }
