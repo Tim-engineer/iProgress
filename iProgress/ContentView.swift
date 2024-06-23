@@ -10,7 +10,6 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
-    @Environment(\.colorScheme) var colorScheme
     
     @Query private var progresses: [ProgressM]
     
@@ -23,28 +22,47 @@ struct ContentView: View {
             List {
                 ForEach(progresses) { progress in
                     Section {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Image(systemName: "aqi.medium")
-                                    .imageScale(.large)
-                                VStack(alignment: .leading) {
-                                    Text(progress.name)
-                                        .font(.headline)
-                                    Text(progress.details)
-                                        .font(.caption)
+                        NavigationLink(value: progress){
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Image(systemName: "aqi.medium")
+                                        .imageScale(.large)
+                                    VStack(alignment: .leading) {
+                                        Text(progress.name)
+                                            .font(.headline)
+                                        Text(progress.details)
+                                            .font(.caption)
+                                    }
                                 }
+                                StyledGauge(currentDate: Date.now, minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
                             }
-                            StyledGauge(currentDate: Date.now, minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
                         }
                     }
-                    .onTapGesture {
-                        progressUpdate = progress
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            modelContext.delete(progress)
+                        } label: {
+                            Label("Delete", systemImage: "trash.fill")
+                        }
+                        
+                        Button {
+                            progressUpdate = progress
+                        } label: {
+                            Label("Update", systemImage: "pencil")
+                        }
+                        .tint(.orange)
                     }
+//                    .onTapGesture {
+//                        progressUpdate = progress
+//                    }
                     .listRowBackground(randomColor().opacity(0.1))
                 }
-                .onDelete(perform: deleteProgress)
+//                .onDelete(perform: deleteProgress)
             }
             .navigationTitle("iProgress")
+            .navigationDestination(for: ProgressM.self) { progress in
+                NavigationProgress(progress: progress)
+            }
             .toolbar {
                 Button("Create Progress", systemImage: "plus") {
                     showingCreate.toggle()

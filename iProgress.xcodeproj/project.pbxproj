@@ -15,6 +15,7 @@
 		D1B0C0CB2C2595E80042F9E5 /* CreateProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B0C0CA2C2595E80042F9E5 /* CreateProgress.swift */; };
 		D1B46F332C26E8F70078F267 /* ProgressM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B46F322C26E8F70078F267 /* ProgressM.swift */; };
 		D1DA1D9A2C26D11000AFC914 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA1D992C26D11000AFC914 /* Gauge.swift */; };
+		D1ECD5772C281FFC007BFE3F /* NavigationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECD5762C281FFC007BFE3F /* NavigationProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D1B0C0CA2C2595E80042F9E5 /* CreateProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProgress.swift; sourceTree = "<group>"; };
 		D1B46F322C26E8F70078F267 /* ProgressM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressM.swift; sourceTree = "<group>"; };
 		D1DA1D992C26D11000AFC914 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
+		D1ECD5762C281FFC007BFE3F /* NavigationProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D1DA1D992C26D11000AFC914 /* Gauge.swift */,
 				D1B0C0CA2C2595E80042F9E5 /* CreateProgress.swift */,
 				D13799AF2C25A25000F84B89 /* UpdateProgress.swift */,
+				D1ECD5762C281FFC007BFE3F /* NavigationProgress.swift */,
 				D1B46F322C26E8F70078F267 /* ProgressM.swift */,
 				D1B0C0BE2C25949B0042F9E5 /* Assets.xcassets */,
 				D1B0C0C02C25949B0042F9E5 /* Preview Content */,
@@ -152,6 +155,7 @@
 				D1B0C0CB2C2595E80042F9E5 /* CreateProgress.swift in Sources */,
 				D1B0C0BD2C25949A0042F9E5 /* ContentView.swift in Sources */,
 				D13799B02C25A25000F84B89 /* UpdateProgress.swift in Sources */,
+				D1ECD5772C281FFC007BFE3F /* NavigationProgress.swift in Sources */,
 				D1DA1D9A2C26D11000AFC914 /* Gauge.swift in Sources */,
 				D1B0C0BB2C25949A0042F9E5 /* iProgressApp.swift in Sources */,
 				D1B46F332C26E8F70078F267 /* ProgressM.swift in Sources */,
