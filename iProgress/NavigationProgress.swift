@@ -11,15 +11,20 @@ struct NavigationProgress: View {
     @Bindable var progress: ProgressM
     
     var body: some View {
+        let gradient = LinearGradient(colors: [.yellow, .green], startPoint: .topLeading, endPoint: .bottomTrailing)
+        
         VStack {
             StyledGauge(currentDate: Date.now, minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
-            Button { } label: {
-                Text(progress.details)
-            }
-            .buttonStyle(.bordered)
-            .tint(.yellow)
+            Text(progress.details)
+                .padding()
+                .background(gradient.opacity(1), in: RoundedRectangle(cornerRadius: 12))
+                .padding()
+                .foregroundStyle(.background)
+                .fontWeight(.black)
+                .multilineTextAlignment(.center)
             Spacer()
         }
+        .padding()
         .navigationTitle(progress.name)
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -27,6 +32,6 @@ struct NavigationProgress: View {
 
 #Preview {
     NavigationStack {
-        NavigationProgress(progress: ProgressM())
+        NavigationProgress(progress: ProgressM(details: "This is some text that shows how it looks with the gradient background and I think it looks amazing"))
     }
 }

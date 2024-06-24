@@ -52,7 +52,7 @@ struct StyledGauge: View {
     // DateFormatter for displaying dates in labels
     var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .full
+        formatter.dateStyle = .long
         return formatter
     }()
 }
@@ -63,4 +63,54 @@ struct StyledGauge: View {
     let oneDayAhead = Calendar.current.date(byAdding: .day, value: 1, to: now)!
     
     return StyledGauge(currentDate: now, minValueDate: oneDayAgo, maxValueDate: oneDayAhead)
+}
+
+struct StyledGauge2: View {
+    let currentDate: Date
+    let minValueDate: Date
+    let maxValueDate: Date
+    
+    let gradient2 = Gradient(colors: [.yellow, .green])
+    
+    var body: some View {
+        Gauge(value: currentValue(), in: minValue()...maxValue()) {
+            Image(systemName: "aqi.medium")
+                .imageScale(.large)
+                .foregroundStyle(.secondary)
+        } currentValueLabel: {
+            Text("\(dateFormatter.string(from: currentDate))")
+                .foregroundStyle(.secondary)
+        }
+        .tint(gradient2)
+        .font(.caption)
+        .gaugeStyle(.accessoryCircular)
+    }
+    
+    // Function to convert date to Double for Gauge
+    func currentValue() -> Double {
+        return currentDate.timeIntervalSinceReferenceDate
+    }
+    
+    func minValue() -> Double {
+        return minValueDate.timeIntervalSinceReferenceDate
+    }
+    
+    func maxValue() -> Double {
+        return maxValueDate.timeIntervalSinceReferenceDate
+    }
+    
+    // DateFormatter for displaying dates in labels
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+}
+
+#Preview {
+    let now = Date.now
+    let oneDayAgo = Calendar.current.date(byAdding: .day, value: -1, to: now)!
+    let oneDayAhead = Calendar.current.date(byAdding: .day, value: 1, to: now)!
+    
+    return StyledGauge2(currentDate: now, minValueDate: oneDayAgo, maxValueDate: oneDayAhead)
 }

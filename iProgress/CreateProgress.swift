@@ -22,13 +22,15 @@ struct CreateProgress: View {
             Group {
                 Section {
                     TextField("Name of the Progress", text: $progress.name)
+                        .font(.headline)
                 }
                 Section {
                     TextField("Description of the Progress", text: $progress.details)
+                        .font(.caption)
                 }
             }
             .autocorrectionDisabled()
-            .padding(.vertical)
+            .padding(.vertical, 8)
             Group {
                 Section("From") {
                     DatePicker("Select the time you need the Progress to be finished", selection: $progress.dateFrom, in: Date.now...)

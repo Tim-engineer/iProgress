@@ -22,20 +22,20 @@ struct ContentView: View {
             List {
                 ForEach(progresses) { progress in
                     Section {
-                        NavigationLink(value: progress){
+                        NavigationLink(value: progress) {
                             VStack(alignment: .leading) {
                                 HStack {
-                                    Image(systemName: "aqi.medium")
-                                        .imageScale(.large)
+                                    StyledGauge2(currentDate: Date.now, minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
                                     VStack(alignment: .leading) {
                                         Text(progress.name)
                                             .font(.headline)
                                         Text(progress.details)
                                             .font(.caption)
                                     }
+                                    .padding(.leading, 8)
                                 }
-                                StyledGauge(currentDate: Date.now, minValueDate: progress.dateFrom, maxValueDate: progress.dateTo)
                             }
+                            .padding(.vertical)
                         }
                     }
                     .swipeActions {
@@ -52,12 +52,11 @@ struct ContentView: View {
                         }
                         .tint(.orange)
                     }
-//                    .onTapGesture {
-//                        progressUpdate = progress
-//                    }
-                    .listRowBackground(randomColor().opacity(0.1))
+                    .listRowBackground(GeometryReader { geometry in
+                        Color.accentColor.opacity(0.4)
+                            .hueRotation(Angle(degrees: Double(geometry.frame(in: .global).minY) / 10))
+                    })
                 }
-//                .onDelete(perform: deleteProgress)
             }
             .navigationTitle("iProgress")
             .navigationDestination(for: ProgressM.self) { progress in

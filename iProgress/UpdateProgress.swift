@@ -14,20 +14,23 @@ struct UpdateProgress: View {
     @Bindable var progress: ProgressM
     
     var body: some View {
+        let alignedMinutes = Date().aligningMinutesToStartOfHour()
         Form {
             Group {
                 Section {
                     TextField("Enter the Progress you want to track", text: $progress.name)
+                        .font(.headline)
                 }
                 Section {
                     TextField("Description of the Progress", text: $progress.details)
+                        .font(.caption)
                 }
             }
             .autocorrectionDisabled()
-            .padding(.vertical)
+            .padding(.vertical, 8)
             Group {
                 Section("From") {
-                    DatePicker("Select the time you need the Progress to be finished", selection: $progress.dateFrom, in: Date.now...)
+                    DatePicker("Select the time you need the Progress to be finished", selection: $progress.dateFrom, in: alignedMinutes...)
                 }
                 Section("To") {
                     DatePicker("Select the time you need the Progress to be finished", selection: $progress.dateTo, in: progress.dateFrom...)
